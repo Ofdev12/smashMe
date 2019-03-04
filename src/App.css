@@ -6,15 +6,3 @@ body {
   /*background-repeat: no-repeat;
   background-size: 100vh, 100vw;*/
 }
-
-.titre1 {
-  display: flex;
-  justify-content: center;
-  color: white;
-  font-size: 40px;
-}
-
-.containerPage {
-  margin-top: 70px;
-  border: 2px solid #008f7a;
-}
