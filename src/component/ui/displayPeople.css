@@ -1,0 +1,34 @@
+.peopleBorder {
+  display: flex;
+  justify-content: space-between;
+  padding: 1%;
+  border: 1px solid white;
+  margin-bottom: 7px;
+  border-radius: 25px;
+}
+
+.peopleName {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 12px;
+}
+
+.delete_button {
+  margin-left: 5%;
+  width: 45px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: white;
+  font-size: 15px;
+}
+
+.delete_button:hover {
+  background-color: #c34a36;
+}
+
+.faction_draw {
+  color: white;
+  font-size: 18px;
+}

@@ -14,4 +14,17 @@
   color: white;
   font-size: 18px;
   font-weight: bold;
+  min-width: 80%;
+}
+
+.add_faction_btn {
+  background-color: transparent;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.add_faction_container {
+  width: 100%;
 }
