@@ -85,7 +85,6 @@ export const GameCreator = () => {
   }
 
   const searchFaction = str => {
-    console.log(str)
   }
 
   const doTheTeam = async () => {
@@ -97,9 +96,7 @@ export const GameCreator = () => {
       peopleOnTeam.length * 2 > selectedFactions.length
     ) {
       setError('You need to add more faction')
-      console.log('error')
     } else {
-      console.log('matchHere')
       for (let ppl of peopleOnTeam) {
         let drawFaction = getRandomFaction()
         let drawFaction2 = getRandomFaction()
