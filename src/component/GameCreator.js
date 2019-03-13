@@ -17,6 +17,7 @@ export const GameCreator = () => {
   const [inputField, setInputField] = useState('')
   const [error, setError] = useState('')
   const [paired, setPaired] = useState({})
+  const [factionsFiltered, setFactionsFiltered] = useState([])
 
   useEffect(() => {
     getFactions(setFactions)
@@ -85,6 +86,19 @@ export const GameCreator = () => {
   }
 
   const searchFaction = str => {
+    const filteredFactions = factions.filter(fac =>
+      fac.name
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .includes(
+          str
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+        )
+    )
+    setFactionsFiltered(filteredFactions)
   }
 
   const doTheTeam = async () => {
@@ -159,18 +173,30 @@ export const GameCreator = () => {
                 onChange={e => searchFaction(e.target.value)}
               />
               <div className="border pannel factionText">
-                {factions &&
-                  factions.map(faction => {
-                    return (
-                      <DisplayFaction
-                        faction={faction}
-                        callback={selectFactions}
-                        selectedFactions={selectedFactions}
-                        text={'+'}
-                        key={faction.id}
-                      />
-                    )
-                  })}
+                {factionsFiltered && factionsFiltered.length > 0
+                  ? factionsFiltered.map(faction => {
+                      return (
+                        <DisplayFaction
+                          faction={faction}
+                          callback={selectFactions}
+                          selectedFactions={selectedFactions}
+                          text={'+'}
+                          key={faction.id}
+                        />
+                      )
+                    })
+                  : factions &&
+                    factions.map(faction => {
+                      return (
+                        <DisplayFaction
+                          faction={faction}
+                          callback={selectFactions}
+                          selectedFactions={selectedFactions}
+                          text={'+'}
+                          key={faction.id}
+                        />
+                      )
+                    })}
               </div>
             </div>
             <div id="full_fac_container">
