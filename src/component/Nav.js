@@ -12,7 +12,14 @@ export const Nav = () => {
           <Button className="bp3-minimal" icon="home" text="Home" />
         </Link>
         <Link to="gameCreator">
-          <Button className="bp3-minimal" icon="map-create" text="New Game" />
+          <Button
+            className="bp3-minimal"
+            icon="map-create"
+            text="Simple Game"
+          />
+        </Link>
+        <Link to="draftGame">
+          <Button className="bp3-minimal" icon="map-create" text="Draft Game" />
         </Link>
         <Navbar.Divider />
       </Navbar.Group>
