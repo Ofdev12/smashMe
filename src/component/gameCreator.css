@@ -29,7 +29,7 @@ h2 {
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
-  margin-top: 8%;
+  margin-top: 4%;
 }
 
 .form_team {
@@ -63,4 +63,15 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+#ng {
+  color: white;
+}
+
+.error {
+  padding-top: 10px;
+  color: #b43761;
+  font-size: 18px;
+  font-weight: bold;
 }

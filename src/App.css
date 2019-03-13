@@ -1,5 +1,6 @@
 body {
   background-color: #0081cf;
+  background-attachment: fixed;
   background-image: linear-gradient(to bottom right, #0081cf, #008f7a);
   height: 100vh;
   width: 100vw;
