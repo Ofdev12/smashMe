@@ -61,7 +61,14 @@ export const GameCreator = () => {
   }
 
   const addPeopleOnTeam = value => {
-    if (!inputField) return
+    setError('')
+    if (!inputField) {
+      setError('You need to enter a name')
+      return
+    }
+    if (peopleOnTeam.find(ppl => ppl === inputField)) {
+      setError('This mate is already on the game')
+    }
     setPeopleOnTeam([...peopleOnTeam, inputField])
     setInputField('')
   }
@@ -83,6 +90,8 @@ export const GameCreator = () => {
 
   const doTheTeam = async () => {
     let matchedFactions = {}
+    setPaired({})
+    setError('')
     if (
       peopleOnTeam.length < 2 ||
       peopleOnTeam.length * 2 > selectedFactions.length
@@ -129,6 +138,9 @@ export const GameCreator = () => {
                 </button>
               </div>
             </form>
+            <div className="flexAro error">
+              <p>{error}</p>
+            </div>
             <div className="list_people">
               {peopleOnTeam.map(gens => {
                 return (
