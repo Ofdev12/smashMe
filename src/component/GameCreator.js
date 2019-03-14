@@ -3,7 +3,6 @@ import { PageContainer } from './ui/PageContainer.js'
 import { DisplayFaction } from './ui/DisplayFaction.js'
 import { DisplayPeople } from './ui/DisplayPeople.js'
 import { getFaction } from '../db/db.js'
-import { FormGroup, InputGroup, Button, Text } from '@blueprintjs/core'
 
 import './gameCreator.css'
 import './global.css'
